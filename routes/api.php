@@ -14,6 +14,14 @@ use App\Http\Controllers\respuestaController;
 |
 */
 
+/**
+	* @OA\Get(
+    *     path="/api/ejecutar",
+    *     summary="Endpoint para la consulta de datos",
+    *     @OA\Response(response="200", description="Datos devueltos"),
+    * )
+    */
+
 
 Route::get("/ejecutar",[respuestaController::class,"index"]);
 
