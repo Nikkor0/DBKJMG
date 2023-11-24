@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\respuestaController;
+use App\Http\Controllers\api\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,6 +27,16 @@ use App\Http\Controllers\respuestaController;
 Route::get("/ejecutar",[respuestaController::class,"index"]);
 
 
+Route::post('/login',[AuthController::class,'login']);
+
+
+
+Route::group(['middleware' => ['auth:sanctum']], function () { //sirve de proteccion el middleware
+
+    Route::post('/registrar',[AuthController::class,'register']);
+    Route::post('/salir',[AuthController::class,'logout']);
+
+});
 
 
 
