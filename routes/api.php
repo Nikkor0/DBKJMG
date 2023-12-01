@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\respuestaController;
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\AutorController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,6 +29,9 @@ Route::get("/ejecutar",[respuestaController::class,"index"]);
 
 
 Route::post('/login',[AuthController::class,'login']);
+
+
+Route::get('/autores',[AutorController::class, 'obtenerAutores']);  //agrega nombre de la funcion del controlador autor
 
 
 
